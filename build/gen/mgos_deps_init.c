@@ -35,6 +35,7 @@ extern bool mgos_rpc_mqtt_init(void);
 extern bool mgos_rpc_service_config_init(void);
 extern bool mgos_rpc_service_fs_init(void);
 extern bool mgos_rpc_service_gpio_init(void);
+extern bool mgos_rpc_service_ota_init(void);
 extern bool mgos_rpc_uart_init(void);
 extern bool mgos_rpc_udp_init(void);
 extern bool mgos_wifi_init(void);
@@ -129,6 +130,9 @@ const struct mgos_lib_info mgos_libs_info[] = {
 
     // "rpc-service-gpio". deps: [ "core" "rpc-common" ]
     {.name = "rpc-service-gpio", .version = "1.0", .init = mgos_rpc_service_gpio_init},
+
+    // "rpc-service-ota". deps: [ "core" "ota-http-client" "rpc-common" ]
+    {.name = "rpc-service-ota", .version = "1.0", .init = mgos_rpc_service_ota_init},
 
     // "rpc-uart". deps: [ "core" "rpc-common" ]
     {.name = "rpc-uart", .version = "1.0", .init = mgos_rpc_uart_init},
