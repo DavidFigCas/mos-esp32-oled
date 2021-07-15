@@ -20,6 +20,11 @@ libs:
   - origin: https://github.com/mongoose-os-libs/wifi
   - origin: https://github.com/mongoose-os-libs/mjs
   - origin: https://github.com/mongoose-os-libs/arduino-adafruit-ssd1306
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-udp
+  
 
 config_schema:
   - ["i2c.enable", true]
@@ -28,5 +33,15 @@ config_schema:
   - ["i2c.debug", false]
   - ["app", "o", {title: "Custom app settings"}]
   - ["app.ssd1306_reset_pin", "i", 16, {title: "SSD1306 display reset pin"}]
+  - ["wifi.ap.ssid", "s", "Concentrador_??????", {title: "SSID"}]
+  - ["wifi.ap.pass", "s", "12345678", {title: "Password", type: "password"}]
+  - ["wifi.sta.enable", "b",true, {title: "Connect to existing WiFi"}]
+  - ["wifi.sta.ssid", "s", "Inventoteca_2G", {title: "SSID"}]
+  - ["wifi.sta.pass", "s", "science_7425", {title: "Password", type: "password"}]
+  - ["dash.enable", "b", true, {"title": "Enable"}]
+  - ["dash.token", "s", "iXDQfu5vtgXd5fYEO0RPqQ", {"title": "Access token"}]
+
+  - ["mqtt.enable", "b", true, {title: "Enable MQTT"}]
+  - ["mqtt.server", "s", "iot.inventoteca.com:1883", {title: "MQTT server"}]
 
 manifest_version: 2017-05-18
